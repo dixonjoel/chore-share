@@ -1,0 +1,7 @@
+<nav>
+    <ul>
+        <li {% if request.path == '/' %}class="active"{% endif %}><a href="/">Home</a></li>
+        <li {% if request.path == '/members' %}class="active"{% endif %}><a href="/members">View Members</a></li>
+        <li {% if request.path == '/chores' %}class="active"{% endif %}><a href="/chores">View Chores</a></li>
+    </ul>
+</nav>

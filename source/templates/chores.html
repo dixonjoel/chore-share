@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>All Chores</title>
+</head>
+<body>
+    <h1>All Chores</h1>
+    {% include 'nav.html' %}
+    <ul>
+        {% for chore in chores %}
+            <li>{{ chore.name }} - {{ chore.member.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

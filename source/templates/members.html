@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>All Members</title>
+</head>
+<body>
+    <h1>All Members</h1>
+    {% include 'nav.html' %}
+    <ul>
+        {% for member in members %}
+            <li>{{ member.name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
