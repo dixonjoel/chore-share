@@ -35,8 +35,19 @@ def _initialize_fake_members(db):
     db.session.add(Member(name='Eve'))
     db.session.commit() 
 
+def _initialize_fake_chores(db):
+    db.session.add(Chore(name='Dishes'))
+    db.session.add(Chore(name='Vacuum'))
+    db.session.add(Chore(name='Clean Bathroom'))
+    db.session.add(Chore(name='Laundry'))
+    db.session.commit()
+
 def _clear_members_table(db):
     db.session.query(Member).delete()
+    db.session.commit()
+
+def _clear_chores_table(db):
+    db.session.query(Chore).delete()
     db.session.commit()
 
 if __name__ == '__main__':
@@ -44,5 +55,7 @@ if __name__ == '__main__':
         db.create_all()
         _clear_members_table(db)
         _initialize_fake_members(db)
+        _clear_chores_table(db)
+        _initialize_fake_chores(db)
     webbrowser.open('http://localhost:5000')
     app.run()
