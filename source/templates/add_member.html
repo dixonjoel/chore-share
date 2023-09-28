@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Add Member</title>
+</head>
+<body>
+    <h1>Add Member</h1>
+    {% include 'nav.html' %}
+    <form method="POST" action="{{ url_for('add_member') }}" id="add-member-form">
+        <label for="name">Member Name:</label>
+        <input type="text" id="name" name="name" required autofocus>
+        <input type="submit" value="Add">
+    </form>
+
+    <script>
+        document.getElementById('add-member-form').addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) { // Enter key
+                event.preventDefault(); // prevent default form submission
+                this.submit(); // submit the form
+            }
+        });
+    </script>
+</body>
+</html>

@@ -9,8 +9,18 @@
     {% include 'nav.html' %}
     <div>
         {% for member in members %}
-            <div class="member-card">{{ member.name }}</div>
+        <div class="member-card">
+            <div class="member-name">{{ member.name }}</div>
+            <form method="POST" action="{{ url_for('delete_member', member_id=member.id) }}">
+                <button type="submit" class="delete-button">
+                    <svg viewBox="0 0 24 24" class="delete-icon">
+                        <path fill="currentColor" d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95 1.414-1.414z"></path>
+                    </svg>
+                </button>
+            </form>
+        </div>
         {% endfor %}
     </div>
+    <button onclick="window.location.href='/members/add'">Add Member</button>
 </body>
 </html>

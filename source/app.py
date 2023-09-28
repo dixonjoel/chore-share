@@ -33,8 +33,7 @@ def add_chore():
         chore = Chore(name=name)
         db.session.add(chore)
         db.session.commit()
-        theurl = url_for('show_chores')
-        return redirect(theurl)
+        return redirect(url_for('show_chores'))
     else:
         return render_template('add_chore.html')
     
@@ -45,6 +44,25 @@ def delete_chore(chore_id):
         db.session.delete(chore)
         db.session.commit()
     return redirect(url_for('show_chores'))
+
+@app.route('/members/add', methods=['GET', 'POST'])
+def add_member():
+    if request.method == 'POST':
+        name = request.form['name']
+        member = Member(name=name)
+        db.session.add(member)
+        db.session.commit()
+        return redirect(url_for('show_members'))
+    else:
+        return render_template('add_member.html')
+
+@app.route('/members/delete/<int:member_id>', methods=['POST'])
+def delete_member(member_id):
+    member = Member.query.get(member_id)
+    if member_id:
+        db.session.delete(member)
+        db.session.commit()
+    return redirect(url_for('show_members'))
 
 def _initialize_fake_members(db):
     db.session.add(Member(name='Alice'))
