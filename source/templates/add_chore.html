@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Add Chore</title>
+</head>
+<body>
+    <h1>Add Chore</h1>
+    {% include 'nav.html' %}
+    <form method="POST" action="{{ url_for('add_chore') }}">
+        <label for="name">Chore Name:</label>
+        <input type="text" id="name" name="name" required>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>

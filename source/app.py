@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from database import db
 from models.member import Member
@@ -16,7 +16,6 @@ db.init_app(app)
 def hello_world():
     return render_template('index.html')
 
-
 @app.route('/members')
 def show_members():
     members = Member.query.all()
@@ -27,6 +26,18 @@ def show_chores():
     chores = Chore.query.all()
     return render_template('chores.html', chores=chores)
 
+@app.route('/chores/add', methods=['GET', 'POST'])
+def add_chore():
+    if request.method == 'POST':
+        name = request.form['name']
+        chore = Chore(name=name)
+        db.session.add(chore)
+        db.session.commit()
+        theurl = url_for('show_chores')
+        return redirect(theurl)
+    else:
+        return render_template('add_chore.html')
+    
 def _initialize_fake_members(db):
     db.session.add(Member(name='Alice'))
     db.session.add(Member(name='Bob'))
