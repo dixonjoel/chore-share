@@ -7,10 +7,10 @@
 <body>
     <h1>All Members</h1>
     {% include 'nav.html' %}
-    <ul>
+    <div>
         {% for member in members %}
-            <li>{{ member.name }}</li>
+            <div class="member-card">{{ member.name }}</div>
         {% endfor %}
-    </ul>
+    </div>
 </body>
 </html>

@@ -29,3 +29,27 @@ nav li.active a {
     background-color: #4CAF50;
     color: white;
 }
+
+.chore-card {
+    background-color: #f2f2f2; /* light gray background */
+    border-radius: 10px; /* rounded edges */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* shadow effect */
+    padding: 20px;
+    margin: 10px;
+    width: calc(30% - 20px); /* max of 3 chores per row */
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.member-card {
+    background-color: #f0ccf1; /* light gray background */
+    border-radius: 10px; /* rounded edges */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* shadow effect */
+    padding: 20px;
+    margin: 10px;
+    width: calc(30% - 20px); /* max of 3 chores per row */
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}

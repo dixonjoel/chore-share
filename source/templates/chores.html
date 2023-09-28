@@ -7,11 +7,11 @@
 <body>
     <h1>All Chores</h1>
     {% include 'nav.html' %}
-    <ul>
+    <div>
         {% for chore in chores %}
-            <li>{{ chore.name }}</li>
+            <div class="chore-card">{{ chore.name }}</div>
         {% endfor %}
-    </ul>
+    </div>
     <button onclick="window.location.href='/chores/add'">Add Chore</button>
 </body>
 </html>
