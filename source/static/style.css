@@ -63,7 +63,7 @@ nav li.active a {
 }
 
 .member-card {
-    background-color: #f2f2f2; /* light gray background */
+    background-color: #f67d7d; /* light gray background */
     border-radius: 10px; /* rounded edges */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* shadow effect */
     padding: 20px;
