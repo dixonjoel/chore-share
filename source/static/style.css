@@ -30,18 +30,6 @@ nav li.active a {
     color: white;
 }
 
-.chore-card {
-    background-color: #f2f2f2; /* light gray background */
-    border-radius: 10px; /* rounded edges */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* shadow effect */
-    padding: 20px;
-    margin: 10px;
-    width: calc(30% - 20px); /* max of 3 chores per row */
-    display: inline-block;
-    vertical-align: top;
-    text-align: center;
-}
-
 .member-card {
     background-color: #f0ccf1; /* light gray background */
     border-radius: 10px; /* rounded edges */
@@ -52,4 +40,45 @@ nav li.active a {
     display: inline-block;
     vertical-align: top;
     text-align: center;
+}
+
+.chore-card {
+    background-color: #e9faac;
+    border-radius: 10px; /* rounded edges */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* shadow effect */
+    padding: 20px;
+    margin: 10px;
+    width: calc(30% - 20px); /* max of 3 chores per row */
+    display: inline-block;
+    vertical-align: middle; /* center the card vertically */
+    text-align: center; /* center the text */
+    max-width: 300px; /* add a maximum width */
+    min-width: 200px; /* add a minimum width */
+    position: relative; /* set the position to relative */
+}
+
+.chore-name {
+    font-size: 20px; /* increase the font size */
+    margin-bottom: 10px; /* add some spacing */
+}
+
+.delete-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    position: absolute; /* set the position to absolute */
+    top: 50%; /* center the button vertically */
+    right: 10px; /* move the button to the right */
+    transform: translateY(-50%); /* adjust the vertical position */
+}
+
+.delete-icon {
+    width: 24px;
+    height: 24px;
+    fill: #000;
+    border: 2px solid #000;
+    border-radius: 50%;
+    padding: 4px;
 }

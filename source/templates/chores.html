@@ -10,9 +10,13 @@
     <div>
         {% for chore in chores %}
         <div class="chore-card">
-            <div>{{ chore.name }}</div>
+            <div class="chore-name">{{ chore.name }}</div>
             <form method="POST" action="{{ url_for('delete_chore', chore_id=chore.id) }}">
-                <input type="submit" value="Delete">
+                <button type="submit" class="delete-button">
+                    <svg viewBox="0 0 24 24" class="delete-icon">
+                        <path fill="currentColor" d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95 1.414-1.414z"></path>
+                    </svg>
+                </button>
             </form>
         </div>
         {% endfor %}
