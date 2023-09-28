@@ -1,5 +1,9 @@
+h1 {
+    color: #E29578;
+}
+
 nav {
-    background-color: #d7f9d2;
+    background-color: #83c5be;
     overflow: hidden;
 }
 
@@ -26,24 +30,12 @@ nav li a:hover:not(.active) {
 }
 
 nav li.active a {
-    background-color: #4CAF50;
+    background-color: #006d77;
     color: white;
 }
 
-.member-card {
-    background-color: #f0ccf1; /* light gray background */
-    border-radius: 10px; /* rounded edges */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* shadow effect */
-    padding: 20px;
-    margin: 10px;
-    width: calc(30% - 20px); /* max of 3 chores per row */
-    display: inline-block;
-    vertical-align: top;
-    text-align: center;
-}
-
 .chore-card {
-    background-color: #e9faac;
+    background-color: #ffddd2;
     border-radius: 10px; /* rounded edges */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* shadow effect */
     padding: 20px;
@@ -63,7 +55,7 @@ nav li.active a {
 }
 
 .member-card {
-    background-color: #f67d7d; /* light gray background */
+    background-color: #edf6f9;
     border-radius: 10px; /* rounded edges */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* shadow effect */
     padding: 20px;
@@ -102,3 +94,5 @@ nav li.active a {
     border-radius: 50%;
     padding: 4px;
 }
+
+/* #E29578 - Salmon color to fill out the color palette of five colors */
