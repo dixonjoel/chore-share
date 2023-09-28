@@ -7,10 +7,19 @@
 <body>
     <h1>Add Chore</h1>
     {% include 'nav.html' %}
-    <form method="POST" action="{{ url_for('add_chore') }}">
+    <form method="POST" action="{{ url_for('add_chore') }}" id="add-chore-form">
         <label for="name">Chore Name:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required autofocus>
         <input type="submit" value="Add">
     </form>
+
+    <script>
+        document.getElementById('add-chore-form').addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) { // Enter key
+                event.preventDefault(); // prevent default form submission
+                this.submit(); // submit the form
+            }
+        });
+    </script>
 </body>
 </html>

@@ -9,7 +9,12 @@
     {% include 'nav.html' %}
     <div>
         {% for chore in chores %}
-            <div class="chore-card">{{ chore.name }}</div>
+        <div class="chore-card">
+            <div>{{ chore.name }}</div>
+            <form method="POST" action="{{ url_for('delete_chore', chore_id=chore.id) }}">
+                <input type="submit" value="Delete">
+            </form>
+        </div>
         {% endfor %}
     </div>
     <button onclick="window.location.href='/chores/add'">Add Chore</button>
