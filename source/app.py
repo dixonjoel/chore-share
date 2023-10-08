@@ -83,15 +83,23 @@ def _clear_members_table(db):
     db.session.query(Member).delete()
     db.session.commit()
 
-def _clear_chores_table(db):
-    db.session.query(Chore).delete()
-    db.session.commit()
+# def _assign_default_frequency(db):
+#     Schedule.__table__.drop(db.engine)
+#     db.create_all()
+#     for chore in db.session.query(Chore):
+#         db.session.add(Schedule(frequency='daily', chore_id=chore.id))
+#     db.session.commit()
+
+# def _clear_chores_table(db):
+#     db.session.query(Chore).delete()
+#     db.session.commit()
 
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
         _clear_members_table(db)
         _initialize_fake_members(db)
+        # _assign_default_frequency(db)
         # _clear_chores_table(db)
         # _initialize_fake_chores(db)
     webbrowser.open('http://localhost:5000')
